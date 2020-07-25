@@ -1,0 +1,28 @@
+﻿<Window x:Class="WPFImenik.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFImenik"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+
+        <StackPanel DockPanel.Dock="Bottom">
+            <UniformGrid  Columns="2">
+                <Label  Content="Ime" FontSize="24"/>
+                <TextBox Text="{Binding ime, UpdateSourceTrigger=Explicit}" FontSize="24"/>
+                <Label Content="Prezime" FontSize="24"/>
+                <TextBox Text="{Binding prezime, UpdateSourceTrigger=Explicit}" FontSize="24" />
+                <Label Content="Adrsea" FontSize="24"/>
+                <TextBox Text="{Binding adresa, UpdateSourceTrigger=Explicit}" FontSize="24" />
+            </UniformGrid>
+            <StackPanel Orientation="Horizontal" Margin="0">
+                <Button Content="Unos" Margin="150 10 20 10" FontSize="24" Click="Unos" />
+                <Button Content="Izmena" Margin="80 10 20 10" FontSize="24" Click="izmena"/>
+                <Button Content="Brisanje" Margin="80 10 20 10" FontSize="24" Click="brisanje" />
+            </StackPanel>
+        </StackPanel>
+        <DataGrid Name="prikaz" ColumnWidth="*"  IsReadOnly="True" FontSize="24" SelectionChanged="izmena" />
+    </DockPanel>
+</Window>
